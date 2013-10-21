@@ -15,12 +15,9 @@ public class Principal {
 		juan.nuevaEdad(18);
 		raul.nuevaEdad(23);
 		pepe.nuevaEdad(21);
-
+		
 		System.out.println("\nMedia edad:");
-		Alumno[] clase = new Alumno[3];
-		clase[0] = juan;
-		clase[1] = raul;
-		clase[2] = pepe;
+		Alumno[] clase = {juan, raul, pepe};
 		
 		System.out.println( Math.round(calcularMedia(clase) * 100) / 100.0 );
 	}
