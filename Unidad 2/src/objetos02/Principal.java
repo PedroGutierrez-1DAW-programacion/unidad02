@@ -1,26 +1,54 @@
 package objetos02;
 
-public class Principal {
-	public static void main(String[] args) {
-		Alumno juan, raul, pepe;
-		
-		juan = new Alumno("Juan Sancho");
-		raul = new Alumno("Raúl Sancho");
-		pepe = new Alumno("Pepe Sancho");
-		
-		System.out.println(juan.queEdad());
-		System.out.println(raul.queEdad());
-		System.out.println(pepe.queEdad());
+import java.util.Scanner;
 
-		juan.nuevaEdad(18);
-		raul.nuevaEdad(23);
-		pepe.nuevaEdad(21);
+public class Principal {
+	static Alumno[] clase = new Alumno[3];
+	static Scanner teclado = new Scanner(System.in);
+	
+	public static void main(String[] args) {
 		
-		System.out.println("\nMedia edad:");
-		Alumno[] clase = {juan, raul, pepe};
+		pedirNombres(clase);	// Pedimos los nombres de los alumnos
 		
-		System.out.println( Math.round(calcularMedia(clase) * 100) / 100.0 );
+		mostarDatos(clase);		// Mostramos los datos
+
+		pedirEdad(clase);		// Pedimos las edades de cada alumno
+		
+		mostarDatos(clase);		// Mostramos los datos
+	
+		// Muestra la media de edad
+		System.out.println( "Edad media: " + (Math.round(calcularMedia(clase) * 100) / 100.0) );
+
+		teclado.close();
 	}
+	
+	private static void pedirNombres(Alumno[] personas) {
+		
+		for(int i=0; i<clase.length; i++){
+			System.out.println("Nombre del nuevo alumno:");
+			String nombre = teclado.next();
+			personas[i] = new Alumno(nombre);
+		}
+	}
+	
+	private static void pedirEdad(Alumno[] personas) {
+		
+		for(int i=0; i<clase.length; i++){
+			System.out.println("Edad de " + personas[i].queNombre() + ":");
+			int edad = teclado.nextInt();
+			personas[i].nuevaEdad(edad);
+		}
+	}
+	
+	private static void mostarDatos(Alumno[] personas) {
+		System.out.println();
+		
+		for(int i=0; i<clase.length; i++)
+			System.out.println(personas[i]);
+
+		System.out.println();
+	}
+	
 	private static double calcularMedia(Alumno[] personas){
 		double media = 0;
 		
