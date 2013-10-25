@@ -10,7 +10,7 @@ public class Graficos_coche {
 		//Canvas lienzo = Canvas.getInstance();
 		
 		Ellipse[] ruedas = new Ellipse[2];
-		Rectangle[] chasis = new Rectangle[3];
+		Rectangle[] chasis = new Rectangle[4];
 		
 		int r = 40; // Radio rueda
 
@@ -20,11 +20,13 @@ public class Graficos_coche {
 		chasis[0] = new Rectangle(20, 60, 180, 40);
 		chasis[1] = new Rectangle(140, 30, 60, 40);
 		chasis[2] = new Rectangle(20, 30, 110, 40);
+		chasis[3] = new Rectangle(160, 40, 30, 20);
 
 		pintar(ruedas, new Color(100, 100, 100));
 		pintar(chasis, new Color(220, 30, 30));
 
 		chasis[2].setColor(new Color(210, 210, 210));
+		chasis[3].setColor(Color.WHITE);
 		
 		dibujar(ruedas);
 		dibujar(chasis);
