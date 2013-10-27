@@ -16,7 +16,12 @@ public class Pais {
 	public static final int lu = 5; // Luxemburgo
 	public static final int el = 6; // Grecia
 	
-	// Constructor
+	/**
+	 * Construye un nuevo Pais
+	 * @param nombre destinado al nombre del país
+	 * @param datos array de tipo int[] que contiene los datos a representar
+	 * @param color objeto de tipo Color de la librería graphics, con el color del gráfico
+	 */
 	Pais(String nombre, int[] datos, Color color){
 		this.nombre = nombre;
 		this.datos = datos;
