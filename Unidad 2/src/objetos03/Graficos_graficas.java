@@ -14,7 +14,6 @@ public class Graficos_graficas {
 	private static final int saltoDato = 2; // Número cada cuantas línas
 	private static final String nombreGrafica = "Salario bruto mínimo (en Euros)";
 	private static int ancho, alto;
-	
 
 	public static void main(String[] args) throws InterruptedException {
 		Pais[] paises = new Pais[7];
@@ -26,7 +25,7 @@ public class Graficos_graficas {
 		paises[Pais.bg] = new Pais("Bulgaria", new int[] {34, 40, 51, 56, 61, 76, 81, 92, 112, 122, 122, 122, 138, 158}, new Color(103, 23, 154));
 		paises[Pais.lu] = new Pais("Luxemburgo", new int[] {1191, 1258, 1290, 1368, 1402, 1466, 1503, 1570, 1570, 1641, 1682, 1757, 1801, 1874}, new Color(222, 22, 41));
 		paises[Pais.el] = new Pais("Grecia", new int[] {542, 543, 571, 606, 630, 667, 709, 730, 794, 817, 862, 862, 876, 683}, new Color(230, 117, 23));
-		
+
 		grafica(paises);
 	}
 
@@ -48,7 +47,7 @@ public class Graficos_graficas {
 				double y1 = inicioX + alto - (paises[i].datos(j) * graficaY / reduccionY);
 				double y2 = inicioX + alto - (paises[i].datos(j + 1) * graficaY / reduccionY);
 				// Crea varias líneas para aumentar el grosor
-				for(int l=0; l<3;l++){
+				for(int l=0; l<4;l++){
 					Line linea = new Line(X, y1 + l - (l/2), X + graficaX, y2 + l - (l/2));
 					linea.setColor(color);
 					linea.draw();
